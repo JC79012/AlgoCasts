@@ -1,0 +1,51 @@
+Max Chars 
+
+
+Maps:
+--> Key-Value pairs 
+--> Keys do not repeat 
+
+map --> [['a',1],['b',1],['c',1]];
+
+making a new map with values:
+
+const myMap = new Map ([
+
+	['a',1],
+	['b',1],
+	['c',1]
+]);
+
+
+Making an empty map:
+
+const emptyMap = new Map();
+
+
+solutions to Max Chars:
+
+
+function maxChar(str){
+   
+   //Create an empty map
+   let myMap = new Map();
+
+   for(let char of str){
+     //increment key-value count if it exist or create one and set to value 1
+     myMap.set(char, myMap.get(char) +1 || 1); 
+   }
+
+  let myKey = "";
+  let max = 0;
+
+  for(let keys in myMap){
+    if(myMap.get(keys) > max){
+       max = myMapt.get(keys);
+       myKey = keys;
+    } 
+  }
+
+ return myKey;
+
+}
+   
